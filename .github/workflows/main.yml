@@ -27,7 +27,6 @@ jobs:
         issuetype: Story
         summary: ${{ github.event.issues.title }}
         description: ${{ github.event.issues.issues.body }}
-        fields: '{"customfield_10171": "test"}'
 
     - name: Log created issue
       run: echo "Issue ${{ steps.create.outputs.issue }} was created"
