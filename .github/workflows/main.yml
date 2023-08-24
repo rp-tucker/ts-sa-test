@@ -12,6 +12,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    - name: Print GitHub event action
+        run: |
+          echo "${{ github.event.action }}"
+
     - name: Login
       uses: atlassian/gajira-login@master
       env:
