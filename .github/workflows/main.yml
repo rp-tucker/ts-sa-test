@@ -12,12 +12,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Print GitHub event action
-      run: echo "${{ github.event_name }}"
-
-    - name: Print GitHub context?
-      run: echo "${{ github }}"
-
     - name: Login
       uses: atlassian/gajira-login@master
       env:
@@ -31,8 +25,8 @@ jobs:
       with:
         project: TD1
         issuetype: Story
-        summary: ${{ github.event.issues.title }}
-        description: ${{ github.event.issues.issues.body }}
+        summary: ${{ github.event.issue.title }}
+        description: ${{ github.event.issue.body }}
 
     - name: Log created issue
       run: echo "Issue ${{ steps.create.outputs.issue }} was created"
